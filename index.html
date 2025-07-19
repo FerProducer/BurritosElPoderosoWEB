@@ -28,19 +28,21 @@
     }
 
     header {
-      position: center;
+      position: sticky;
       top: 0;
       background: var(--claro);
       padding: 0.01rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       z-index: 1000;
     }
 
     header img {
       height: 150px;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
     }
 
     .slogan {
@@ -93,7 +95,14 @@
       border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.8s ease-out forwards;
     }
+
+    .producto:nth-child(1) { animation-delay: 0.2s; }
+    .producto:nth-child(2) { animation-delay: 0.4s; }
+    .producto:nth-child(3) { animation-delay: 0.6s; margin: 0.5rem; }
 
     .producto img {
       width: 100%;
@@ -139,6 +148,7 @@
       max-width: 600px;
       height: 300px;
       border: none;
+      border-radius: 10px;
     }
 
     footer {
@@ -161,6 +171,24 @@
       text-decoration: none;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       z-index: 1001;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+      70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
   </style>
 </head>
@@ -176,7 +204,7 @@
 
   <section class="menu">
     <div class="producto">
-      <img src="https://sdmntprcentralus.oaiusercontent.com/files/00000000-0594-61f5-a27a-1403b2fd7507/raw?se=2025-07-19T04%3A42%3A07Z&sp=r&sv=2024-08-04&sr=b&scid=189a37a2-357a-568b-89eb-a317ef8a191d&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-19T02%3A22%3A27Z&ske=2025-07-20T02%3A22%3A27Z&sks=b&skv=2024-08-04&sig=csE9fzRCcCn3T2JbcQrezkCVvNRtfrtzUdWXyaVxqwM%3D" alt="Burrito Clásico" loading="lazy">
+      <img src="https://github.com/FerProducer/BurritosElPoderosoWEB/blob/main/ChatGPT%20Image%20Jul%2018,%202025,%2009_42_18%20PM.png?raw=true" alt="Burrito Clásico" loading="lazy">
       <div class="producto-content">
         <h3>Burrito Clásico</h3>
         <p>Relleno de frijoles, carne asada y queso fundido. Incluye refresco y cajita de fruta.</p>
@@ -186,7 +214,7 @@
     </div>
 
     <div class="producto">
-      <img src="https://sdmntprwestus2.oaiusercontent.com/files/00000000-746c-61f8-8a35-06f947d2ac3a/raw?se=2025-07-19T04%3A55%3A19Z&sp=r&sv=2024-08-04&sr=b&scid=27d58b6b-bc57-5aca-a9cd-5b960495841c&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-19T02%3A22%3A33Z&ske=2025-07-20T02%3A22%3A33Z&sks=b&skv=2024-08-04&sig=mQj%2BDSmkVzH9GEsWlLhjSPDNIRIoqvuZzSbvGuFnfzs%3D" alt="Burrito Vegetariano" loading="lazy">
+      <img src="https://github.com/FerProducer/BurritosElPoderosoWEB/blob/main/ChatGPT%20Image%20Jul%2018,%202025,%2011_27_33%20PM.png?raw=true" alt="Burrito Vegetariano" loading="lazy">
       <div class="producto-content">
         <h3>Burrito Vegetariano</h3>
         <p>Con nopales, calabacitas, frijoles y queso panela. Incluye refresco y cajita de fruta.</p>
@@ -196,7 +224,7 @@
     </div>
 
     <div class="producto">
-      <img src="https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-adf4-622f-b9b7-9c1aad9abd04/raw?se=2025-07-19T05%3A01%3A42Z&sp=r&sv=2024-08-04&sr=b&scid=a7529a76-1869-537c-992d-09a9477ab08a&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-19T02%3A26%3A15Z&ske=2025-07-20T02%3A26%3A15Z&sks=b&skv=2024-08-04&sig=U25yThL9a5GvQxibQ40vFHMTrnAHXGe8azTUOLd4FK0%3D" alt="Burrito Pollo Chipotle" loading="lazy">
+      <img src="https://github.com/FerProducer/BurritosElPoderosoWEB/blob/main/ChatGPT%20Image%20Jul%2018,%202025,%2011_27_28%20PM.png?raw=true" alt="Burrito Pollo Chipotle" loading="lazy">
       <div class="producto-content">
         <h3>Burrito Pollo Chipotle</h3>
         <p>Pechuga de pollo en salsa chipotle, verduritas y frijoles negros. Incluye refresco y cajita de fruta.</p>
@@ -209,7 +237,7 @@
   <section class="seccion">
     <h2>Ubicación</h2>
     <p>Estamos en Chihuahua, Chihuahua. Visítanos o pide para llevar.</p>
-    <iframe src="https://maps.app.goo.gl/P7UMPWyFYyQ5r6jL6" loading="lazy" title="Ubicación del local"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d413.86476418566036!2d-106.12660107904884!3d28.666274238045915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1752902724586!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     <p><strong>Horario:</strong> Lun-Dom 10am - 10pm</p>
   </section>
 
@@ -229,4 +257,5 @@
   <a href="https://wa.me/5216391342577?text=Hola%2C%20quiero%20ordenar%20un%20burrito%20para%20llevar" class="whatsapp-float">☞ Pedir</a>
 </body>
 </html>
+
 
